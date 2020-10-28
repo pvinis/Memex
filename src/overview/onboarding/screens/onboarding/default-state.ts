@@ -11,7 +11,7 @@ export const getDefaultState = () =>
         isTrackingEnabled: true,
         areShortcutsEnabled: false,
         areStubsEnabled: false,
-        areVisitsEnabled: false,
+        areVisitsEnabled: true,
         areBookmarksEnabled: true,
         areAnnotationsEnabled: true,
         areScreenshotsEnabled: false,

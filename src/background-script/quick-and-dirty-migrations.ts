@@ -34,19 +34,6 @@ export const migrations: Migrations = {
         }
     },
     /*
-     * Ensure local storage indexing flags are set to disable auto-indexing on visit and
-     * enable on-demand indexing on pages that get bookmarked or have annotations created.
-     */
-    'disable-auto-indexing-on-visit': async ({ localStorage }) => {
-        await localStorage.set({
-            [IDXING_STORAGE_KEYS.LINKS]: true,
-            [IDXING_STORAGE_KEYS.BOOKMARKS]: true,
-            [IDXING_STORAGE_KEYS.STUBS]: false,
-            [IDXING_STORAGE_KEYS.VISITS]: false,
-            [IDXING_STORAGE_KEYS.SCREENSHOTS]: false,
-        })
-    },
-    /*
      * We want to add indicies on two currently optional fields.
      * Add an index on an optional field is fine, it simply results in a sparse index.
      * Though we want to be able to query the entire dataset, hence the need for this migration.
